@@ -14,7 +14,7 @@ router.get('/fetchallnotes',fetchuser, async (req,res) => {
             console.error(error.message);
              res.status(500).send("Internal server error");
        }
-         const notes = await Notes.find({user: req.user.id});
+         const notes = await notes.find({user: req.user.id});
         res.json(notes)
 })
 
